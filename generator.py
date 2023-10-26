@@ -2,7 +2,7 @@ import cv2
 import os
 import random
 
-num_of_results = 10
+num_of_results = 50
 
 # List background and object image folders
 background_images = os.listdir("training-image-generator/background_images")
@@ -45,5 +45,7 @@ for i in range(num_of_results):
 
             # Save the resulting image
             cv2.imwrite("training-image-generator/result_images/trainingImage" + str(i+1) + ".png", background)
+
+        print("Training Image", i+1, "Done")
     except:
         print("Check to make sure BackgroundImages and ObjectImages contain images.")
